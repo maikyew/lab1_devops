@@ -8,8 +8,18 @@ def check_password_digit(password):
     return any(char.isdigit() for char in password)
 
 
+def check_password_uppercase(password):
+    """Перевіряє, чи містить пароль хоча б одну велику літеру."""
+    return any(char.isupper() for char in password)
+
+
 def password_strength(password):
     """Визначає рівень надійності пароля."""
-    if check_password_length(password) and check_password_digit(password):
+    if (
+        check_password_length(password)
+        and check_password_digit(password)
+        and check_password_uppercase(password)
+    ):
         return "Надійний пароль"
+
     return "Слабкий пароль"
