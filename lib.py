@@ -20,6 +20,5 @@ def password_strength(password):
         and check_password_digit(password)
         and check_password_uppercase(password)
     ):
-       return "Пароль надійний"
-
+        return "Пароль дуже надійний"
     return "Слабкий пароль"
